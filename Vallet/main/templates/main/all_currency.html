@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block head %}
+<title>Все валюты</title>
+{% endblock %}
+{% block body %}
+<h1 class="card-header text-center text-primary">Все валюты по курсу к рублю</h1>
+<div class="d-flex justify-content-center">
+   <div class="px-4 py-5 my-3 w-50 text-center">
+    <div class="row mb-3 text-center">
+     {% for key, val in names.items %}
+      <div class="p-2 m-2 col-md-7 themed-grid-col bg-light border">{{key}}</div>
+      <div class="p-2 m-2 col-md-4 themed-grid-col bg-light border">{{val}} rub</div>
+    {% endfor %}
+    </div>
+   </div>
+</div>
+{% endblock %}

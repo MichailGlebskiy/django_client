@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% block head %}
+<title>Перевод валют</title>
+{% endblock %}
+{% block body %}
+<h1 class="card-header text-center text-primary">Перевод валют</h1>
+<div class="d-flex justify-content-center">
+   <div class="px-4 py-5 my-3 w-50 text-center">
+      <form class="form" action="/" method="post">
+         {% csrf_token %}
+         <label class="m-1">Перевести из</label>
+         <select class="form-control selector" name="convert" id="convert">
+         {% for curr in names %}
+         <option value="{{ curr }}" {% if from_convert == curr %}selected{% endif %}>{{ curr }}</option>
+         {% endfor %}
+         </select>
+         <label class="m-1">Количество</label>
+         <div><input class="input" type="number" id="amount" name="amount" {% if from_amount %} value="{{from_amount}}" {% endif %}></div>
+         <div><label class="m-1">Перевести в</label></div>
+         <select class="form-control selector" name="convert_to" id="convert_to">
+         {% for curr in names %}
+         <option value="{{ curr }}" {% if from_convert_to == curr %}selected{% endif %}>{{ curr }}</option>
+         {% endfor %}
+         </select>
+         <label class="m-1">Результат</label>
+         <label class="form-control selector">{{result}} </label>
+         <button class="btn btn-primary" type="submit">Рассчитать</button>
+      </form>
+   </div>
+</div>
+{% endblock %}
