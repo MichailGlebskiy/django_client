@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from worker.worker_service import worker_service
-from worker.worker_service.Logger import Logger, LoggerMethod
+from worker.log_service.Logger import Logger, LoggerMethod
 
 
 def index(request):

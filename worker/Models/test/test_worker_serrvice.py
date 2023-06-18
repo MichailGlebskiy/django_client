@@ -1,8 +1,7 @@
-from worker.wsgi import *
 from django.test import TestCase
 
 from test_worker_factory import TestWorkerFactory
-from worker.worker_service.hetwhe.models import Worker
+from worker.Models.models import Worker
 from worker.worker_service import worker_service
 
 

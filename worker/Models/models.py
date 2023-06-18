@@ -16,7 +16,7 @@ class Worker(models.Model):
         return str(self.id) + " " + str(self.first_name) + " " + str(self.second_name) + " " + str(self.man)
 
     class Meta:
-        app_label = 'worker_service.hetwhe.models.'
+        app_label = 'worker.Models.models.'
         db_table = "test\".\"worker"
 
 
@@ -28,12 +28,16 @@ class Project(models.Model):
     salary = models.IntegerField(null=False)
 
     class Meta:
-        app_label = 'worker_service.hetwhe.models.'
+        app_label = 'worker.Models.models.'
         db_table = "test\".\"projects"
 
-#
-# class Log(models.Model):
-#     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-#     project_id = models.ForeignKey('Project', on_delete=models.DO_NOTHING, db_column='project_id')
-#     action_type = models.DateTimeField(auto_now=True)
-#
+
+class Log(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    project_id = models.ForeignKey('Project', on_delete=models.DO_NOTHING, db_column='project_id')
+    action_type = models.CharField(max_length=15)
+    time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        app_label = 'worker.Models.models'
+        db_table = "test\".\"log"

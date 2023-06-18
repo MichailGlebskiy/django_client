@@ -1,13 +1,11 @@
-from django.http import HttpResponse
-from worker.worker_service.hetwhe.models import Worker
+from worker.Models.models import Worker
 
 
 def get_all(worker: dict):
     if not worker:
-        data = Worker.objects.all()
+        return Worker.objects.all()
     else:
-        data = Worker.objects.filter(**worker)
-    return data
+        return Worker.objects.filter(**worker)
 
 
 def delete_id(id: str):

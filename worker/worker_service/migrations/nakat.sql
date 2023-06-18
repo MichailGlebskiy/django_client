@@ -24,3 +24,16 @@ WITH(
     OIDS = FALSE
 );
 ALTER TABLE test.projects OWNER TO postgres;
+create table test.log(
+	id uuid not null default uuid_generate_v1(),
+	project_id uuid not null,
+	acrion_type CHARACTER VARYING,
+	action_type timestamp,
+	constraint pk_log primary key (id),
+	constraint fk_project foreign key (project_id) references test.projects(id)
+)
+
+WITH(
+    OIDS = FALSE
+);
+ALTER TABLE test.log OWNER TO postgres;

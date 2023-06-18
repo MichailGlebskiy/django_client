@@ -1,1 +1,0 @@
-UPDATE [2023-06-13 22:06:24] <WSGIRequest: GET '/data/update/?id=20dcfea5-0ba8-495f-ade9-433e17b77fab&first_name=%D0%9E%D0%BB%D0%B5%D0%BA&age=21'> update database

@@ -1,6 +1,5 @@
-from worker.wsgi import *
-from worker.worker_service.hetwhe.models import Worker
-from worker.worker_service.hetwhe.models import Project
+from worker.Models.models import Worker
+from worker.Models.models import Project
 
 
 class TestWorkerFactory:
